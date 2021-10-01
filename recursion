@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class runner {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String input = s.nextLine();
+		System.out.println(solution.convertStringToInt(input));
+	}
+}
+
+
+// function 
+public class solution {
+
+	public static int convertStringToInt(String input){
+		// Write your code here
+      if(input.length()==0){
+        return 0;
+      }
+      
+      char c=input.charAt(input.length()-1);
+      int a=input.charAt(input.length()-1)-'0';   //int a =c-'0'
+      int smallans=convertStringToInt(input.substring(0,input.length()-1));
+      int ans=smallans * 10+ a;
+      return ans;
+      
+
+	}
+}
